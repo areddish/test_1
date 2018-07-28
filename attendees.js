@@ -7,13 +7,6 @@ var attendees = [
     { "name": "Shijit", "role": FOUNDER },
     { "name": "Joel", "role": PRESENTER },
     { "name": "You", "role": ATTENDEE },
-    { "name": "Yodu", "role": ATTENDEE },
-    { "name": "You", "role": ATTENDEE },
-    { "name": "Yosu", "role": ATTENDEE },
-    { "name": "Ysou", "role": ATTENDEE },
-    { "name": "You", "role": ATTENDEE },
-    { "name": "Yosssssssssssssu", "role": ATTENDEE },
-    { "name": "You", "role": ATTENDEE },
 ];
 
 var nodes = {};
