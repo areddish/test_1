@@ -6,5 +6,6 @@ const attendees = [
    "Your name here",
    "Mom",
    "Dad",
+   "A cute puppy",
 ];
 
