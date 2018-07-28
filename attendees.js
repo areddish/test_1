@@ -4,5 +4,6 @@ const attendees = [
    //   Leave the comma so it merges easy.
    //   Delete this comment.
    "Your name here",
+   "Mom",
 ];
 
