@@ -1,0 +1,67 @@
+body {
+  background: darkblue;
+  color: white;
+}
+
+a {
+  color: white
+}
+
+a:hover {
+  color: yellow
+}
+
+.header {
+  display: grid;
+  grid-template-columns: auto 150px;
+}
+
+.logo {
+  grid-column: 2;
+  width: 150px;
+}
+
+.presenter {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 130px 130px;
+  grid-column-gap: 25px;
+}
+
+.audience {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 130px 130px 130px 130px;
+  grid-column-gap: 25px;
+}
+
+.person {
+  display: grid;
+  width: 130px;
+  height: auto;
+  margin: 4px;
+  grid-template-rows: 80% auto;
+}
+
+.photo {
+  width: 128px;
+  height: 128px;
+  border: 2px solid;
+}
+
+.name {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.selected {
+  transform: scale(1.1, 1.1);
+}
+
+.selected .photo {
+  border-color: red;
+}
