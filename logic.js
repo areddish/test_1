@@ -5,9 +5,9 @@ const MAX_IMAGES = 3;
 var nodes = {};
 var imageCounter = 0;
 
-var createPersonIcon = function(person, role)
+var createPersonIcon = function(name, role)
 {
-    let safeName = encodeURI(person.name);
+    let safeName = encodeURI(name);
     if (nodes[safeName] !== undefined) {
         nodes[safeName] += 1;
         safeName += nodes[safeName];
@@ -19,19 +19,13 @@ var createPersonIcon = function(person, role)
     let containerNode = document.createElement("div");
     containerNode.id = safeName;
     containerNode.className = "person";
-    containerNode.setAttribute("onclick", "show('" + safeName + "','" + person.github_username + "')");
+    containerNode.setAttribute("onclick", "show('" + safeName + "')");
 
     let imageNode = document.createElement("img");
     imageNode.className = "photo";
     imageNode.src = role == PRESENTER ? "images/octo.jpg":  "images/" + imageCounter + ".png";
     imageCounter++;
     imageCounter %= MAX_IMAGES;
-    getGithubData(person.github_username)
-        .then(json => {
-            var url = json["avatar_url"];
-            console.log("image" + url);
-            imageNode.src = url ? url : "images/octo.jpg";
-        });
 
     let nameNode = document.createElement("div");
     nameNode.className = "name";
@@ -68,25 +62,5 @@ var show = function(id, username)
     const popup = document.getElementById("popup");
     popup.style.display = "inline";
 
-    getGithubData(username)
-        .then(json => {
-            const content = document.getElementById("content");
-            const name = json["name"];
-            const location = json["location"];
-            const repoCount = json["public_repos"];
-            if (!name && !location && !repoCount) {
-                content.innerText = "Couldn't get information for user: " + username;
-            }
-            else {              
-                document.getElementById("popup.name").innerText = "Name: " + name;
-                document.getElementById("popup.loc").innerText = "Location: " + location;
-                document.getElementById("popup.repos").innerText = "# of public repos: " + repoCount;      
-            }
-        });    
-}
-
-var getGithubData = function(username)
-{
-    return fetch("https://api.github.com/users/"+username)
-        .then(data => data.json())
+    content.innerText = "Make a change here!";
 }
