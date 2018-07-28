@@ -29,7 +29,7 @@ var createPersonIcon = function(name, role)
 
     let nameNode = document.createElement("div");
     nameNode.className = "name";
-    nameNode.innerText = person.name;
+    nameNode.innerText = name;
 
     containerNode.appendChild(imageNode);
     containerNode.appendChild(nameNode);
