@@ -66,3 +66,36 @@ a:hover {
 .selected .photo {
   border-color: red;
 }
+
+.popup {
+  background: lightgrey;
+  border: 2px black solid;
+  display: none;
+  color: black;
+
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:400px;  /* adjust as per your needs */
+  height:400px;   /* adjust as per your needs */
+  margin-left:-200px;   /* negative half of width above */
+  margin-top:-200px; 
+}
+
+.closeButton {
+  float: right;
+  background: brown;
+  width: 20px;
+  height: 20px;
+  border: 1px solid;
+  border-radius: 4px;
+  margin:2px;
+}
+
+.content {
+  text-align: left;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 45px 5px 5px 5px;
+}

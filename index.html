@@ -2,11 +2,13 @@
 
 <HEAD>
     <TITLE>Code With Me - Git Night</TITLE>
+    <SCRIPT src="presenters.js"></SCRIPT>
     <SCRIPT src="attendees.js"></SCRIPT>
+    <SCRIPT src="logic.js"></SCRIPT>        
     <LINK rel="stylesheet" type="text/css" href="styles.css">
 </HEAD>
 
-<BODY onload="addAttendees()">
+<BODY onload="render()">
     <div class="header">
         <h1>Welcome to git night!</h1>
         <img class="logo" src="https://git-scm.com/images/logo@2x.png">
@@ -17,20 +19,27 @@
     </h3>
     <div id="presenter" class="presenter"></div>
     <div id="audience" class="audience"></div>
+    <div id="popup" class="popup">
+        <div class="closebutton" onclick="hide()"></div>
+        <div id="content" class="content">
+            <div id="popup.name"></div>
+            <div id="popup.loc"></div>
+            <div id="popup.repos"></div>
+        </div>
+    </div>
     <SCRIPT type="text/javascript">
-        var addAttendees = function () {
-            var presenterNode = document.getElementById("presenter");
-            var audienceNode = document.getElementById("audience");
-            for (var p in attendees) {
-                let personNode = createPersonIcon(attendees[p].name, attendees[p].role);
-                if (attendees[p].role === PRESENTER)
-                    presenterNode.appendChild(personNode);
-                else
-                    audienceNode.appendChild(personNode);
+        var render = function () {
+            const presenterNode = document.getElementById("presenter");
+            const audienceNode = document.getElementById("audience");
+            for (let i = 0; i < presenters.length; i++) {
+                let personNode = createPersonIcon(presenters[i], PRESENTER);
+                presenterNode.appendChild(personNode);
+            }
+            for (let i = 0; i < attendees.length; i++) {
+                let personNode = createPersonIcon(attendees[i], ATTENDEE);
+                audienceNode.appendChild(personNode);
             }
         }
     </SCRIPT>
-
-
 </BODY>
 <HTML>
