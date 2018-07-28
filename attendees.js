@@ -5,5 +5,6 @@ const attendees = [
    //   Delete this comment.
    "Your name here",
    "Mom",
+   "Dad",
 ];
 
